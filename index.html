@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A real family's 12-year fight for their home in Gujarat. No possession. No refund. No justice. This is India's housing crisis — lived from the inside.">
+<meta property="og:title" content="12 Years. No Home. No Justice. — Gujarat Housing Fraud">
+<meta property="og:description" content="My family paid for a flat 12 years ago. We still sleep on rent. Read our story.">
+<title>12 Years. No Home. | Real Story from Gujarat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #fdf6e3;
+    --saffron: #ff6f00;
+    --saffron-pale: #fff3e0;
+    --red: #c62828;
+    --green: #1b5e20;
+    --grey: #6d6556;
+    --rule: #d4c9a8;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--red);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 8px 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .ticker-inner {
+    display: flex;
+    gap: 80px;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .ticker-item::before { content: "● "; opacity: .6; }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    border-bottom: 3px double var(--rule);
+    padding: 28px 5vw 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .masthead-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+  .masthead-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .masthead-title span { color: var(--saffron); }
+  .issue-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--grey);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+  }
+  .hero-left {
+    padding: 60px 5vw 60px 5vw;
+    border-right: 1px solid var(--rule);
+  }
+  .hero-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: var(--red);
+  }
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+  .hero-headline .year {
+    color: var(--saffron);
+    font-style: italic;
+  }
+  .hero-deck {
+    font-size: 1.15rem;
+    color: #3d3428;
+    line-height: 1.75;
+    border-left: 3px solid var(--saffron);
+    padding-left: 18px;
+    margin-bottom: 36px;
+  }
+  .hero-byline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--grey);
+    letter-spacing: .06em;
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 5vw;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 28rem;
+    position: absolute;
+    top: -80px;
+    left: -20px;
+    color: rgba(255,111,0,.08);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.35;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 24px;
+  }
+  .pull-quote em { color: var(--saffron); font-style: normal; }
+  .pull-source {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #b0a89a;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  /* ── TIMELINE ── */
+  .section { padding: 60px 5vw; border-bottom: 1px solid var(--rule); }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+    border-left: 2px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 40px 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .timeline-item.visible { opacity: 1; transform: none; }
+  .timeline-item::before {
+    content: attr(data-year);
+    position: absolute;
+    left: -60px;
+    top: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    color: var(--grey);
+    width: 46px;
+    text-align: right;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -40px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--rule);
+  }
+  .timeline-item.critical .timeline-dot {
+    background: var(--red);
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px rgba(198,40,40,.15);
+  }
+  .timeline-item.critical .tl-title { color: var(--red); }
+  .tl-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .tl-body { font-size: .95rem; color: #3d3428; }
+
+  /* ── IMPACT GRID ── */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 36px;
+  }
+  .impact-card {
+    background: var(--paper);
+    padding: 32px 28px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .impact-card.visible { opacity: 1; transform: none; }
+  .impact-icon { font-size: 2rem; margin-bottom: 12px; }
+  .impact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--saffron);
+    margin-bottom: 6px;
+  }
+  .impact-label { font-size: .9rem; color: var(--grey); line-height: 1.4; }
+
+  /* ── VOICES / CALLOUT ── */
+  .voices { background: var(--ink); color: var(--paper); }
+  .voices .section-label { color: #b0a89a; }
+  .voices .section-label::after { background: #3a3020; }
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .voice-card {
+    border: 1px solid #3a3020;
+    padding: 28px;
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .voice-card.visible { opacity: 1; transform: none; }
+  .voice-card p { font-size: .95rem; line-height: 1.75; color: #d4c9a8; margin-bottom: 16px; }
+  .voice-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--saffron);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  /* ── DEMANDS ── */
+  .demands-list {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+    counter-reset: demand;
+  }
+  .demands-list li {
+    counter-increment: demand;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    opacity: 0;
+    transform: translateX(-16px);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .demands-list li.visible { opacity: 1; transform: none; }
+  .demands-list li::before {
+    content: counter(demand, decimal-leading-zero);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--rule);
+    line-height: 1.2;
+  }
+  .demand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .demand-body { font-size: .9rem; color: var(--grey); }
+
+  /* ── INDIA CALLOUT ── */
+  .india-callout {
+    background: var(--saffron-pale);
+    border-left: 5px solid var(--saffron);
+    padding: 40px 5vw;
+    text-align: center;
+  }
+  .india-callout h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    margin-bottom: 14px;
+  }
+  .india-callout p { font-size: 1rem; color: #5c4a1e; max-width: 700px; margin: 0 auto 20px; }
+  .leaders {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .leader-chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    padding: 6px 14px;
+    border: 1px solid var(--saffron);
+    border-radius: 100px;
+    color: #7a4800;
+  }
+
+  /* ── SHARE / AMPLIFY ── */
+  .amplify { background: var(--red); color: #fff; padding: 56px 5vw; text-align: center; }
+  .amplify h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    margin-bottom: 14px;
+  }
+  .amplify p { font-size: 1rem; opacity: .85; max-width: 600px; margin: 0 auto 32px; }
+  .share-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .share-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 2px solid rgba(255,255,255,.5);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .2s, border-color .2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .share-btn:hover { background: rgba(255,255,255,.15); border-color: #fff; }
+  .share-btn.primary { background: #fff; color: var(--red); border-color: #fff; }
+  .share-btn.primary:hover { background: #fde; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 36px 5vw;
+    border-top: 3px double var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--grey);
+    line-height: 1.8;
+  }
+  .footer-note {
+    font-size: .85rem;
+    color: var(--grey);
+    max-width: 500px;
+    text-align: right;
+  }
+
+  /* ── COUNTER animation ── */
+  .count-up { display: inline-block; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { border-top: 2px solid var(--rule); padding-top: 40px; }
+    .hero-right::before { font-size: 16rem; }
+    .timeline-item::before { display: none; }
+    .masthead { flex-direction: column; }
+    .issue-meta { text-align: left; }
+    footer { flex-direction: column; }
+    .footer-note { text-align: left; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-inner { animation: none; }
+    .timeline-item, .impact-card, .voice-card, .demands-list li { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-label="Breaking news ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">FAMILY PAID IN FULL — 2012 — STILL NO HOME</span>
+    <span class="ticker-item">BUILDER PROMISES DATES FOR 10+ YEARS — NEVER DELIVERS</span>
+    <span class="ticker-item">NO RERA PROTECTION EXISTED WHEN FLAT WAS BOUGHT</span>
+    <span class="ticker-item">COURT CASE AMONG PARTNERS — BUYERS PAY THE PRICE</span>
+    <span class="ticker-item">MOTHER SUFFERS MIGRAINES — FATHER BROKEN — CHILDREN'S FUTURES STOLEN</span>
+    <span class="ticker-item">THIS IS GUJARAT — LAND OF SARDAR PATEL — WHERE IS THE JUSTICE?</span>
+    <span class="ticker-item">FAMILY PAID IN FULL — 2012 — STILL NO HOME</span>
+    <span class="ticker-item">BUILDER PROMISES DATES FOR 10+ YEARS — NEVER DELIVERS</span>
+    <span class="ticker-item">NO RERA PROTECTION EXISTED WHEN FLAT WAS BOUGHT</span>
+    <span class="ticker-item">COURT CASE AMONG PARTNERS — BUYERS PAY THE PRICE</span>
+    <span class="ticker-item">MOTHER SUFFERS MIGRAINES — FATHER BROKEN — CHILDREN'S FUTURES STOLEN</span>
+    <span class="ticker-item">THIS IS GUJARAT — LAND OF SARDAR PATEL — WHERE IS THE JUSTICE?</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div>
+    <div class="masthead-label">Public Interest Document</div>
+    <div class="masthead-title">The <span>Gujarat</span> Housing Betrayal</div>
+  </div>
+  <div class="issue-meta">
+    Filed: June 2026<br>
+    Case Origin: Ahmedabad, Gujarat<br>
+    Status: <strong style="color:var(--red)">UNRESOLVED — 12 YEARS</strong>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">One Family's Unending Wait</div>
+    <h1 class="hero-headline">
+      We Paid for a Home<br>
+      in <span class="year">2012.</span><br>
+      We Are Still Waiting.
+    </h1>
+    <p class="hero-deck">
+      My father bought a flat in Gujarat over a decade ago. The builder took the money. 
+      A partner died. A court case began. And we — the buyers — have been handed a new 
+      date every few months for <strong>ten years</strong>, while our family's health, 
+      education, and dignity have slowly collapsed.
+    </p>
+    <div class="hero-byline">Written by the son of the buyer &nbsp;·&nbsp; Gujarat, India &nbsp;·&nbsp; 2026</div>
+  </div>
+  <div class="hero-right">
+    <p class="pull-quote">
+      "Every time I call, he says <em>'I will give you a date.'</em><br>
+      That date is the only thing we have received in 12 years."
+    </p>
+    <div class="pull-source">— Son of the buyer, speaking directly</div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section" style="padding-left: calc(5vw + 60px);">
+  <div class="section-label">A Timeline of Broken Promises</div>
+  <div class="timeline">
+
+    <div class="timeline-item" data-year="2012">
+      <div class="timeline-dot"></div>
+      <div class="tl-title">Flat Purchased in Good Faith</div>
+      <p class="tl-body">My father buys a flat from a builder with multiple partners. Payment made in full. RERA does not yet exist in Gujarat — buyers have no formal protection. A dream of a stable home begins.</p>
+    </div>
+
+    <div class="timeline-item" data-year="2014">
+      <div class="timeline-dot"></div>
+      <div class="tl-title">First Delays Begin</div>
+      <p class="tl-body">Possession is due. The builder begins giving dates — "come next month," "come in 3 months." The family waits patiently, trusting the process.</p>
+    </div>
+
+    <div class="timeline-item critical" data-year="~2016">
+      <div class="timeline-dot"></div>
+      <div class="tl-title">A Partner Dies — Everything Stops</div>
+      <p class="tl-body">One of the 6–7 partners in the builder firm passes away. Instead of resolving ownership and honouring commitments to buyers, the surviving partners go to court against each other. The buyers are collateral damage.</p>
+    </div>
+
+    <div class="timeline-item critical" data-year="2018">
+      <div class="timeline-dot"></div>
+      <div class="tl-title">Health Crisis Begins at Home</div>
+      <p class="tl-body">My mother develops chronic migraines. My father begins drinking daily. The stress of homelessness-in-waiting, combined with financial strain and helplessness, breaks the family's health. My sisters' education suffers. I miss college opportunities despite good marks.</p>
+    </div>
+
+    <div class="timeline-item" data-year="2020">
+      <div class="timeline-dot"></div>
+      <div class="tl-title">Legal Authorities Contacted — No Action</div>
+      <p class="tl-body">We reach out to legal aid and consumer authorities. They ask for the builder's email ID. When we ask the builder, he simply never sends it. The system requires paperwork the wrongdoer can refuse to provide.</p>
+    </div>
+
+    <div class="timeline-item critical" data-year="2022">
+      <div class="timeline-dot"></div>
+      <div class="tl-title">Builder Refuses Even a Refund</div>
+      <p class="tl-body">"I will never give you interest," he says on the phone. No refund. No possession. Just another date. The family has now lost a decade of potential housing equity, savings, and mental health.</p>
+    </div>
+
+    <div class="timeline-item" data-year="2026">
+      <div class="timeline-dot"></div>
+      <div class="tl-title">Court Case Still Pending — No End in Sight</div>
+      <p class="tl-body">The partner dispute drags on in court. We cannot afford a lawyer. We fear police extortion. We fear endless litigation. We are publishing this story because we have no other option.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section">
+  <div class="section-label">What 12 Years of Waiting Has Cost Us</div>
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="impact-icon">🏠</div>
+      <div class="impact-num count-up" data-target="12">0</div>
+      <div class="impact-label">Years since payment.<br>Zero possession.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">📅</div>
+      <div class="impact-num count-up" data-target="50">0</div>
+      <div class="impact-label">Broken "dates" given<br>by the builder (estimate)</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🎓</div>
+      <div class="impact-num">2</div>
+      <div class="impact-label">Children unable to access<br>quality colleges due to instability</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🧠</div>
+      <div class="impact-num">3</div>
+      <div class="impact-label">Family members with<br>stress-induced health conditions</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">⚖️</div>
+      <div class="impact-num">₹0</div>
+      <div class="impact-label">Interest or refund received<br>despite builder admitting the delay</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🇮🇳</div>
+      <div class="impact-num">1000s</div>
+      <div class="impact-label">Other Indian families<br>in the exact same trap</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="section voices">
+  <div class="section-label">The Barriers We Face</div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <p>"Go to the police" — but the police demand bribes. We are the victims. Why should we pay to be heard?</p>
+      <div class="voice-tag">Barrier: Police Corruption</div>
+    </div>
+    <div class="voice-card">
+      <p>"Hire a lawyer" — but lawyers cost money we don't have, for a case we don't know will end in our lifetime.</p>
+      <div class="voice-tag">Barrier: Cost of Justice</div>
+    </div>
+    <div class="voice-card">
+      <p>"File a RERA complaint" — but RERA didn't exist when we bought. Old cases have no clear protection.</p>
+      <div class="voice-tag">Barrier: No Retroactive RERA</div>
+    </div>
+    <div class="voice-card">
+      <p>"Get the builder's email" — he simply doesn't send it. Authorities need it to proceed. The wrongdoer controls the evidence.</p>
+      <div class="voice-tag">Barrier: Procedural Deadlock</div>
+    </div>
+    <div class="voice-card">
+      <p>The builder's family moved to Mumbai. No known address. No accountability. No consequences — so far.</p>
+      <div class="voice-tag">Barrier: Fugitive Impunity</div>
+    </div>
+    <div class="voice-card">
+      <p>Court cases in India take decades. For a family without resources, filing a case means years of cost with uncertain outcome.</p>
+      <div class="voice-tag">Barrier: Judicial Backlog</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMANDS -->
+<section class="section">
+  <div class="section-label">What We Are Asking For</div>
+  <ul class="demands-list">
+    <li>
+      <div>
+        <div class="demand-title">Immediate Possession or Full Refund with Interest</div>
+        <div class="demand-body">The builder took money in 2012. Either deliver the flat or return every rupee with fair interest. This is not generosity — it is the law.</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="demand-title">Gujarat Government: Create a Pre-RERA Dispute Cell</div>
+        <div class="demand-body">Thousands of families bought flats before RERA existed. They deserve a dedicated, free dispute resolution mechanism — not silence.</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="demand-title">Locate the Builder — His Family Has Moved to Mumbai</div>
+        <div class="demand-body">The developer relocated without informing buyers or courts. Authorities must treat this as evidence of intent to evade — not a clerical matter.</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="demand-title">Free Legal Aid for Housing Fraud Victims</div>
+        <div class="demand-body">Victims of builder fraud should not need ₹50,000+ to hire a lawyer just to file a claim. State-sponsored legal aid for housing cases must be accessible and real.</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="demand-title">Anti-Corruption Mechanism for Housing Complaints</div>
+        <div class="demand-body">If police extort victims, there must be a safe, anonymous channel to report both the original fraud and the bribe demand — without fear.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- INDIA CALLOUT -->
+<section class="india-callout">
+  <h2>This Is the Land of Chanakya, Gandhi, and Sardar Patel.</h2>
+  <p>
+    Gujarat — the birthplace of leaders who fought for every ordinary Indian's dignity. 
+    We did not migrate here expecting justice to be a luxury. We migrated for opportunity, 
+    for education, for a better life. We paid our savings for a roof. That is not too much to ask.
+  </p>
+  <p style="color:#8b5e00; font-style:italic; font-size:.95rem;">
+    "The true measure of any society can be found in how it treats its most vulnerable members." 
+    — adapted from Gandhi
+  </p>
+  <div class="leaders">
+    <span class="leader-chip">Chanakya</span>
+    <span class="leader-chip">Chandragupta Maurya</span>
+    <span class="leader-chip">Ashok Samrat</span>
+    <span class="leader-chip">Chhatrapati Shivaji Maharaj</span>
+    <span class="leader-chip">Guru Gobind Singh</span>
+    <span class="leader-chip">Mahatma Gandhi</span>
+    <span class="leader-chip">Sardar Vallabhbhai Patel</span>
+  </div>
+</section>
+
+<!-- AMPLIFY -->
+<section class="amplify">
+  <h2>If You Are a Public Servant, Please Read This.</h2>
+  <p>
+    You have the power to act. We do not. Share this page. 
+    Tag your representative. Send it to a journalist. Forward it to a legal aid NGO. 
+    One share could change a family's decade of suffering.
+  </p>
+  <div class="share-row">
+    <button class="share-btn primary" onclick="copyLink()">📋 Copy Page Link</button>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?text=A%20family%20in%20Gujarat%20paid%20for%20a%20flat%20in%202012.%20They%20still%20don%27t%20have%20it.%2012%20years%20of%20broken%20promises%20and%20destroyed%20lives.%20This%20is%20India%27s%20housing%20crisis%20from%20the%20inside.%20Read%3A&url=https://housing-injustice.netlify.app" target="_blank" rel="noopener">𝕏 Share on X</a>
+    <a class="share-btn" href="https://wa.me/?text=A%20family%20in%20Gujarat%20paid%20for%20a%20flat%20in%202012.%20They%20still%20don%27t%20have%20it.%20Read%20their%20story%3A%20https%3A%2F%2Fhousing-injustice.netlify.app" target="_blank" rel="noopener">💬 Share on WhatsApp</a>
+    <a class="share-btn" href="mailto:?subject=A%20Family%20in%20Gujarat%20Is%20Still%20Waiting%20for%20Their%20Home&body=Please%20read%20this%20real%20story%20of%20housing%20fraud%20in%20Gujarat.%20A%20family%20paid%20for%20a%20flat%20in%202012%20and%20still%20has%20no%20possession.%20This%20affects%20thousands.%20Read%3A%20https%3A%2F%2Fhousing-injustice.netlify.app" target="_blank" rel="noopener">✉️ Send by Email</a>
+  </div>
+  <p id="copy-confirm" style="margin-top:16px; font-size:.85rem; opacity:0; transition:opacity .3s;">✓ Link copied to clipboard!</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    This is a real story.<br>
+    Names withheld for safety.<br>
+    Location: Gujarat, India.
+  </p>
+  <p class="footer-note">
+    If you are a journalist, legal aid organization, housing rights NGO, or government official 
+    who can help — this family is reachable. This page exists because every other avenue 
+    has been exhausted or blocked.
+  </p>
+</footer>
+
+<script>
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.timeline-item, .impact-card, .voice-card, .demands-list li').forEach(el => {
+  observer.observe(el);
+});
+
+// Count-up animation
+function animateCount(el) {
+  const target = parseInt(el.dataset.target);
+  let current = 0;
+  const step = Math.ceil(target / 40);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current;
+    if (current >= target) clearInterval(timer);
+  }, 35);
+}
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCount(entry.target);
+      countObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
+
+// Copy link
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const confirm = document.getElementById('copy-confirm');
+    confirm.style.opacity = '1';
+    setTimeout(() => confirm.style.opacity = '0', 2500);
+  });
+}
+</script>
+</body>
+</html>
